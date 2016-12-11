@@ -94,12 +94,15 @@ set autoindent
 " ファイル操作に関する設定:
 
 " バックアップファイルの出力先ディレクトリを指定する
+set backup
 set backupdir=~/.vim/.backup
 " スワップファイルの出力先ディレクトリを指定する
+set swapfile
 set directory=~/.vim/.swap
 " .viminfo(状態を復元するためファイル)の出力パス
 " set viminfo+=n~/.vim/.viminfo
 " UNDOファイルの出力先ディレクトリを指定する
+set undofile
 set undodir=~/.vim/.undo
 
 "-------------------------------------------------------------------------------

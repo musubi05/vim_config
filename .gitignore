@@ -3,12 +3,11 @@
 .vim/.backup/*
 .vim/.swap/*
 .vim/bundle/*
-!neobundle.vim
+!.gitkeep
 
 # 
 .viminfo
 .vim/.netrwhist
 
 # 
-!.gitkeep
 .DS_Store
