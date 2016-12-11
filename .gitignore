@@ -1,0 +1,14 @@
+# Tmp file dir
+.vim/.undo/*
+.vim/.backup/*
+.vim/.swap/*
+.vim/bundle/*
+!neobundle.vim
+
+# 
+.viminfo
+.vim/.netrwhist
+
+# 
+!.gitkeep
+.DS_Store
