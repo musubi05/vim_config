@@ -1,13 +1,14 @@
-# Tmp file dir
+# Tmp file directories.
 .vim/.undo/*
 .vim/.backup/*
 .vim/.swap/*
 .vim/bundle/*
 !.gitkeep
 
-# 
+# Tmp files.
 .viminfo
 .vim/.netrwhist
+.vim/spell
 
-# 
+# System file
 .DS_Store
