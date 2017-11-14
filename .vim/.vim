@@ -1,0 +1,1 @@
+/home/yugo/vim_config/.vim

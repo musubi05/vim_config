@@ -55,6 +55,8 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
   " ファイルをtree表示
   NeoBundle 'scrooloose/nerdtree'
+  NeoBundle 'jistr/vim-nerdtree-tabs' 
+  NeoBundle 'Xuyuanp/nerdtree-git-plugin' 
 
   " indent for yaml
   NeoBundle 'chase/vim-ansible-yaml'
@@ -69,6 +71,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
   NeoBundle 'cocopon/iceberg.vim'
 
+ 
 call neobundle#end()
 
 " Required:
@@ -131,7 +134,7 @@ endif
 " not ignore case.
 se noic
 " スペルチェック
-set spell
+set nospell
 set spelllang=en,cjk
 " matchit.vim
 runtime macros/matchit.vim
@@ -148,7 +151,7 @@ let g:NERDTreeShowBookmarks=1
 " 引数なしで起動した場合、NERDTreeを開く
 " autocmd vimenter * if !argc() | NERDTree | endif
 " 表示・非表示切り替え
-nmap <silent> <C-n><C-t>      :NERDTreeToggle<CR>
+"nmap <silent> <C-n><C-t>      :NERDTreeToggle<CR>
 
 "-------------------------------------------------------------------------------
 " Previm:
@@ -207,3 +210,6 @@ cnoremap datetime <ESC>a<C-r>=strftime("%Y/%m/%d %H:%M:%S")<CR><ESC>
 " Unite:
 """nnoremap <silent>gs :Unite giti/status <CR>
 """nnoremap <silent>gb :Unite giti/branch_all <CR>
+
+"-- NERDTreeToggle
+map <C-n> :NERDTreeTabsToggle<CR>
