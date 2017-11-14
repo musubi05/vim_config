@@ -38,7 +38,17 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   NeoBundle 'tyru/open-browser.vim'
 
   " コード補完
-  """NeoBundle 'Shougo/neocomplete.vim'
+  NeoBundle 'Shougo/neocomplete.vim'
+  NeoBundle 'Shougo/vimproc.vim', {
+              \ 'build' : {
+              \ 'windows' : 'make -f make_mingw32.mak',
+              \ 'cygwin' : 'make -f make_cygwin.mak',
+              \ 'mac' : 'make -f make_mac.mak',
+              \ 'unix' : 'make -f make_unix.mak',
+              \ },
+              \ }
+  NeoBundle 'Rip-Rip/clang_complete'
+  NeoBundle 'Shougo/neoinclude.vim'
 
   " 静的解析
   NeoBundle 'scrooloose/syntastic'
@@ -213,3 +223,27 @@ cnoremap datetime <ESC>a<C-r>=strftime("%Y/%m/%d %H:%M:%S")<CR><ESC>
 
 "-- NERDTreeToggle
 map <C-n> :NERDTreeTabsToggle<CR>
+
+" 'Shougo/neocomplete.vim' {{{
+let g:neocomplete#enable_at_startup = 1
+if !exists('g:neocomplete#force_omni_input_patterns')
+        let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_overwrite_completefunc = 1
+let g:neocomplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+"""}}}
+
+" 'Rip-Rip/clang_complete' {{{
+
+" disable auto completion for vim-clanG
+let g:clang_auto = 1
+let g:clang_complete_auto = 1
+let g:clang_auto_select = 1
+let g:clang_use_library = 1
+let g:clang_library_path = '/usr/lib/llvm-3.5/lib'
+let g:clang_c_options = '-std=c11'
+let g:clang_cpp_options = '-std=c++11'
+
+" }}}
+set updatetime=100
