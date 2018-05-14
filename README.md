@@ -4,7 +4,8 @@
 
 ```bash
 cd ~
-git clone https://github.com/mktktmr/vim_config.git
+sudo apt install vim-gnome
+git clone https://github.com/musubi05/vim_config.git
 ln -s vim_config/.vim .vim
 ln -s vim_config/.vimrc .vimrc
 git clone https://github.com/Shougo/neobundle.vim.git vim_config/.vim/bundle/neobundle.vim
